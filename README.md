@@ -1,4 +1,5 @@
 # Banco-de-Dados
-### Esta pasta contem todos os itens necessários em nosso Banco de Dados para utilizar o nosso site de livros, ela sera composta por:
-  - #### ScriptBD (contem todos os comandos para a criacao do Banco de Dados)
-  - #### MER (todo o plano do banco de dados e funcionamento)
+### Repositório destionado à visualização do Banco de Dados previamente criado em SQL Server
+  - #### CreateBD, exclude e inserts (contem todos os comandos para a criacao, inserção e delete do Banco de Dados);
+  - #### Gatilhos, Indices, Procedimentos Armazenados e Views;
+  - #### DER (Diagrama Entidade Relacionamento);
