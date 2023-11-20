@@ -21,13 +21,11 @@ BEGIN
   -- Se o autor não existir, realiza o insert
   IF @author_Id IS NULL
   BEGIN
-    EXEC bookHub.spInsertAuthor @authorName
+    INSERT INTO bookHub.Authors (name)
+    VALUES (@authorName);
 
-    -- INSERT INTO bookHub.Authors (name)
-    -- VALUES (@authorName);
-
-    -- SET @author_Id = 
-    --   (SELECT SCOPE_IDENTITY() AS newAuthorId);
+    SET @author_Id = 
+      (SELECT SCOPE_IDENTITY() AS newAuthorId);
   END;
 
   -- Insere o livro
@@ -38,3 +36,18 @@ BEGIN
   INSERT INTO bookHub.BookAuthors (book_id, author_Id)
   VALUES ((SELECT SCOPE_IDENTITY() AS newBookId), @author_Id);
 END;
+
+
+
+
+
+EXEC bookHub.spInsertBook 
+  @authorName = 'Nome do Autor', 
+  @gender = null, 
+  @title = 'Título do Livro', 
+  @publication_year = '2023-11-17T00:00:00', 
+  @price = 29.99, 
+  @available = 1;
+
+
+  SELECT * from bookHub.Books
