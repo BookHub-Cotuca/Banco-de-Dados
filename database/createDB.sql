@@ -15,7 +15,7 @@ CREATE TABLE bookHub.authors (
 
 CREATE TABLE bookHub.gender (
   gender_id INT PRIMARY KEY IDENTITY(1,1),
-  name VARCHAR(20) NOT NULL
+  name VARCHAR(20) UNIQUE NOT NULL 
 );
 
 CREATE TABLE bookHub.books (
