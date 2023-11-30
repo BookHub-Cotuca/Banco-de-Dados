@@ -14,3 +14,9 @@ BEGIN
         THROW 51000,'Delete Error',1
     END CATCH
 END;
+
+
+select * from bookHub.books
+
+EXEC bookHub.spDeleteBook
+ @book_id = 10

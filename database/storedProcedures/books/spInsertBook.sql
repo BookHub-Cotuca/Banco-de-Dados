@@ -1,14 +1,14 @@
 
 CREATE OR ALTER PROCEDURE bookHub.spInsertBook
   @authorName VARCHAR(100),
-  @gender INT,
+  @gender VARCHAR(20),
   @title VARCHAR(255),
-  @publication_year DATETIME,
-  @price DECIMAL(10, 2),
-  @available BIT
+  @publication_year CHAR(4),
+  @price DECIMAL(10, 2)
 AS
 BEGIN
-  DECLARE @author_Id INT;
+  DECLARE @author_Id INT,
+  @gender_id INT;
 
   -- Verifica se o autor já existe
   SELECT @author_Id =
@@ -28,9 +28,11 @@ BEGIN
       (SELECT SCOPE_IDENTITY() AS newAuthorId);
   END;
 
+  SELECT @gender_id = gender_id FROM bookHub.gender WHERE name LIKE '%'+@gender+'%';
+
   -- Insere o livro
-  INSERT INTO bookHub.Books (gender, title, publication_year, price, available)
-  VALUES (@gender, @title, @publication_year, @price, @available);
+  INSERT INTO bookHub.Books (gender, title, publication_year, price)
+  VALUES (@gender_id, @title, @publication_year, @price);
 
   -- Associa o livro ao autor na tabela BookAuthors
   INSERT INTO bookHub.BookAuthors (book_id, author_Id)
@@ -42,12 +44,14 @@ END;
 
 
 EXEC bookHub.spInsertBook 
-  @authorName = 'Nome do Autor', 
-  @gender = null, 
-  @title = 'Título do Livro', 
-  @publication_year = '2023-11-17T00:00:00', 
-  @price = 29.99, 
-  @available = 1;
+  @authorName = 'Dante Alighieri', 
+  @gender = 1, 
+  @title = 'Divina Comédia', 
+  @publication_year = '1304', 
+  @price = 29.99
+
+
+
 
 
   SELECT * from bookHub.Books

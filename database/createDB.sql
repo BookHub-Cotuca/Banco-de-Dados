@@ -10,7 +10,7 @@ CREATE TABLE bookHub.employees (
 
 CREATE TABLE bookHub.authors (
   author_id INT PRIMARY KEY IDENTITY(1,1),
-  name VARCHAR(100) NOT NULL
+  name VARCHAR(100) UNIQUE NOT NULL
 );
 
 CREATE TABLE bookHub.gender (
@@ -21,8 +21,8 @@ CREATE TABLE bookHub.gender (
 CREATE TABLE bookHub.books (
   book_id INT PRIMARY KEY IDENTITY(1,1),
   gender INT,
-  title VARCHAR(255) NOT NULL,
-  publication_year DATETIME,
+  title VARCHAR(255) UNIQUE NOT NULL,
+  publication_year CHAR(4),
   price DECIMAL(10, 2) NOT NULL,
   available BIT DEFAULT(1),
   CONSTRAINT fkBookGender FOREIGN KEY (gender) 
@@ -32,7 +32,7 @@ CREATE TABLE bookHub.books (
 CREATE TABLE bookHub.bookAuthors (
   id INT IDENTITY(1,1),
   book_id INT NOT NULL,
-  author_Id INT,
+  author_Id INT NOT NULL,
   PRIMARY KEY (book_id, author_Id),
   CONSTRAINT fkBookId FOREIGN KEY (book_id) 
     REFERENCES bookHub.books (book_id),

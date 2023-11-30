@@ -16,7 +16,7 @@ VALUES ('J.K. Rowling'),
 
 -- Inserções na tabela Gender
 INSERT INTO bookHub.Gender (name)
-VALUES ('Fiction'),
+VALUES ('Teste'),
        ('Mystery'),
        ('Science Fiction'),
        ('Non-fiction'),

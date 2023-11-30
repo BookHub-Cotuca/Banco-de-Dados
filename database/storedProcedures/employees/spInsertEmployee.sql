@@ -16,3 +16,9 @@ BEGIN
         THROW 51000,'Insertion Error.',1;
     END CATCH
 END;
+
+EXEC bookHub.spInsertEmployee
+  @first_name = "Vitor",
+  @last_name = "Henrique",
+  @email = "teste@gmail.com",
+  @password= "12345"
