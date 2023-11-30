@@ -20,11 +20,11 @@ CREATE TABLE bookHub.gender (
 
 CREATE TABLE bookHub.books (
   book_id INT PRIMARY KEY IDENTITY(1,1),
-  gender INT,
+  gender INT NOT NULL,
   title VARCHAR(255) UNIQUE NOT NULL,
-  publication_year CHAR(4),
+  publication_year CHAR(4) NOT NULL,
   price DECIMAL(10, 2) NOT NULL,
-  available BIT DEFAULT(1),
+  available BIT DEFAULT(1) NOT NULL,
   CONSTRAINT fkBookGender FOREIGN KEY (gender) 
     REFERENCES bookHub.gender (gender_id)
 );

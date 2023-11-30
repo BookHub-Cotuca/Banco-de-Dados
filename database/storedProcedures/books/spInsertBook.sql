@@ -39,19 +39,158 @@ BEGIN
   VALUES ((SELECT SCOPE_IDENTITY() AS newBookId), @author_Id);
 END;
 
+-- Utilizando os gêneros já inseridos
 
+-- Romance
+EXEC bookHub.spInsertBook 
+  @authorName = 'Jane Austen', 
+  @gender = 'Romance', 
+  @title = 'Orgulho e Preconceito', 
+  @publication_year = '1813', 
+  @price = 24.99
 
+-- Ficção Científica
+EXEC bookHub.spInsertBook 
+  @authorName = 'Isaac Asimov', 
+  @gender = 'Ficção Científica', 
+  @title = 'Eu, Robô', 
+  @publication_year = '1950', 
+  @price = 22.99
 
+-- História
+EXEC bookHub.spInsertBook 
+  @authorName = 'Eric Hobsbawm', 
+  @gender = 'História', 
+  @title = 'A Era das Revoluções', 
+  @publication_year = '1962', 
+  @price = 28.99
+
+-- Mistério
+EXEC bookHub.spInsertBook 
+  @authorName = 'Agatha Christie', 
+  @gender = 'Mistério', 
+  @title = 'O Assassinato no Expresso Oriente', 
+  @publication_year = '1934', 
+  @price = 25.99
+
+-- Aventura
+EXEC bookHub.spInsertBook 
+  @authorName = 'Jules Verne', 
+  @gender = 'Aventura', 
+  @title = 'Vinte Mil Léguas Submarinas', 
+  @publication_year = '1870', 
+  @price = 26.99
+
+-- Biografia
+EXEC bookHub.spInsertBook 
+  @authorName = 'Walter Isaacson', 
+  @gender = 'Biografia', 
+  @title = 'Steve Jobs', 
+  @publication_year = '2011', 
+  @price = 30.99
+
+-- Poesia
+EXEC bookHub.spInsertBook 
+  @authorName = 'Pablo Neruda', 
+  @gender = 'Poesia', 
+  @title = 'Cem Sonetos de Amor', 
+  @publication_year = '1959', 
+  @price = 20.99
+
+-- Autoajuda
+EXEC bookHub.spInsertBook 
+  @authorName = 'Dale Carnegie', 
+  @gender = 'Autoajuda', 
+  @title = 'Como Fazer Amigos e Influenciar Pessoas', 
+  @publication_year = '1936', 
+  @price = 23.99
+
+-- Drama
+EXEC bookHub.spInsertBook 
+  @authorName = 'Tennessee Williams', 
+  @gender = 'Drama', 
+  @title = 'Um Bonde Chamado Desejo', 
+  @publication_year = '1947', 
+  @price = 32.99
+
+-- Variações adicionais para spInsertBook
 
 EXEC bookHub.spInsertBook 
-  @authorName = 'Dante Alighieri', 
-  @gender = 1, 
-  @title = 'Divina Comédia', 
-  @publication_year = '1304', 
+  @authorName = 'George Orwell', 
+  @gender = 'Ficção Científica', 
+  @title = '1984', 
+  @publication_year = '1949', 
+  @price = 27.99
+
+EXEC bookHub.spInsertBook 
+  @authorName = 'J.K. Rowling', 
+  @gender = 'Fantasia',  -- Supondo que 'Fantasia' é um novo gênero
+  @title = 'Harry Potter e a Pedra Filosofal', 
+  @publication_year = '1997', 
+  @price = 34.99
+
+EXEC bookHub.spInsertBook 
+  @authorName = 'Gabriel Garcia Marquez', 
+  @gender = 'Romance', 
+  @title = 'Cem Anos de Solidão', 
+  @publication_year = '1967', 
   @price = 29.99
 
+EXEC bookHub.spInsertBook 
+  @authorName = 'Isabel Allende', 
+  @gender = 'Romance', 
+  @title = 'A Casa dos Espíritos', 
+  @publication_year = '1982', 
+  @price = 26.99
+
+EXEC bookHub.spInsertBook 
+  @authorName = 'Arthur C. Clarke', 
+  @gender = 'Ficção Científica', 
+  @title = '2001: Uma Odisseia no Espaço', 
+  @publication_year = '1968', 
+  @price = 31.99
+
+EXEC bookHub.spInsertBook 
+  @authorName = 'Haruki Murakami', 
+  @gender = 'Ficção',  -- Supondo que 'Ficção' é um novo gênero
+  @title = 'Norwegian Wood', 
+  @publication_year = '1987', 
+  @price = 22.99
+
+EXEC bookHub.spInsertBook 
+  @authorName = 'Charles Dickens', 
+  @gender = 'Clássico',  -- Supondo que 'Clássico' é um novo gênero
+  @title = 'Grandes Esperanças', 
+  @publication_year = '1861', 
+  @price = 30.99
+
+EXEC bookHub.spInsertBook 
+  @authorName = 'Stephen King', 
+  @gender = 'Terror',  -- Supondo que 'Terror' é um novo gênero
+  @title = 'O Iluminado', 
+  @publication_year = '1977', 
+  @price = 35.99
+
+EXEC bookHub.spInsertBook 
+  @authorName = 'Emily Brontë', 
+  @gender = 'Romance Gótico',  -- Supondo que 'Romance Gótico' é um novo gênero
+  @title = 'O Morro dos Ventos Uivantes', 
+  @publication_year = '1847', 
+  @price = 28.99
+
+EXEC bookHub.spInsertBook 
+  @authorName = 'Kazuo Ishiguro', 
+  @gender = 'Drama', 
+  @title = 'Os Despojados', 
+  @publication_year = '2010', 
+  @price = 33.99
+
+
+  
 
 
 
 
-  SELECT * from bookHub.Books
+
+
+  
