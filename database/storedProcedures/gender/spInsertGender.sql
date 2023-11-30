@@ -41,5 +41,18 @@ EXEC bookHub.spInsertGender
 EXEC bookHub.spInsertGender
     @name = "Drama"
 
+EXEC bookHub.spInsertGender
+    @name = "Fantasia"
+
+EXEC bookHub.spInsertGender
+    @name = "Ficção"
+
+EXEC bookHub.spInsertGender
+    @name = "Clássico"
+
+EXEC bookHub.spInsertGender
+    @name = "Terror"
+
+
 
 

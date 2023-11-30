@@ -39,3 +39,6 @@ CREATE TABLE bookHub.bookAuthors (
   CONSTRAINT fkBookAuthId FOREIGN KEY (author_Id) 
     REFERENCES bookHub.authors (author_Id)
 );
+
+
+SELECT * FROM bookHub.vw_Books
